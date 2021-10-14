@@ -36,8 +36,7 @@
         }
 
         svg {
-            animation: presentText 2s;
-            animation: circleMoveAround 10s cubic-bezier(0.90, 0.025, 0.90, 0.025) infinite;
+            animation: circleMoveAround 20s cubic-bezier(0.90, 0.025, 0.90, 0.025) infinite;
         }
     }
 }

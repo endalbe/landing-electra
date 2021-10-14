@@ -1,6 +1,10 @@
 @import "../../functions";
 
 .top_navbar {
+    &.hidden {
+        opacity: 0;
+    }
+
     z-index: 200;
     position: relative;
     display: flex;

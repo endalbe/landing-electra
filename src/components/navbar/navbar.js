@@ -1,4 +1,7 @@
 import "./navbar.scss";
 
-let lineAppears = document.querySelectorAll("line_");
-lineAppears.forEach((line) => line.classList.add("line_"));
+const lines = document.querySelectorAll("line_");
+const links = document.querySelector(".top_navbar");
+
+lines.forEach((line) => line.classList.add("line_"));
+setInterval(() => links.classList.remove("hidden"), 5000);
