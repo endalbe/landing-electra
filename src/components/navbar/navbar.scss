@@ -1,0 +1,121 @@
+@import "../../functions";
+
+.top_navbar {
+    z-index: 200;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    padding: rem(10) 0;
+
+    .nav-item {
+        transition: .2s;
+        display: block;
+        position: relative;
+        text-decoration: none;
+        color: white;
+        text-transform: uppercase;
+        padding: rem(10) rem(2);
+
+        animation: showItemTo 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 5s;
+
+        &::after {
+            content: '';
+            display: block;
+            position: relative;
+            width: 0%;
+            height: rem(2);
+            background: white;
+            top: rem(5);
+            left: 50%;
+            border-radius: rem(10);
+
+            transition: 0.2s;
+        }
+
+        &:hover {
+            &::after {
+                width: 100%;
+                left: 0%;
+                height: rem(1);
+            }
+        }
+
+        &:active {
+            color: transparentize(white, 0.5);
+        }
+    }
+
+    .line_ {
+        display: inline-block;
+        max-width: 30vw;
+        width: 10vw;
+
+        @media screen and (min-width: 768px) {
+            width: 30vw;
+        }
+
+        @media screen and (min-width: 1240px) {
+            width: 35%;
+        }
+
+        height: 1px;
+        background: white;
+        color: white;
+        border-radius: rem(10);
+
+        animation: viewLines 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) 5s;
+    }
+
+    .year {
+        @media screen and (max-width: 768px) {
+            display: none;
+        }
+        animation: showItemFrom 0.5s cubic-bezier(1, 0.885, 0.75, 1) 5s;
+    }
+}
+
+@keyframes viewLines {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        @media screen and (max-width: 768px) {
+            width: 10vw;
+        }
+                
+        @media screen and (min-width: 767.999px) {
+            width: 30vw;
+        }
+    }
+}
+
+@keyframes showItemFrom {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes showItemTo {
+    0% {
+        transform: scale(2);
+        opacity: 0;
+    }
+    
+    60% {
+        transform: scale(0.9);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

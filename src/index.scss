@@ -1,0 +1,24 @@
+@import "functions";
+@import "~reseter.css/src/scss/reseter.scss";
+@import "variables";
+
+html, body {
+    background: $dark;
+    color: white;
+    overflow-x: hidden;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+
+    min-height: 100vh;
+    max-width: 100vw;
+}
+
+.container {
+    display: block;
+    margin: 0 auto;
+    max-width: rem(1200);
+    width: 100%;
+}
