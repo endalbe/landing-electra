@@ -1,13 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= htmlWebpackPlugin.options.title %></title>
-</head>
-<body class="app">
-    <%= require('html-loader!./components/navbar/navbar.html').default %>
-    <%= require('html-loader!./components/header/header.html').default %>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="theme-color" content="#000" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title><%= htmlWebpackPlugin.options.title %></title>
+	</head>
+	<body>
+		<div class="preloader">
+			<div class="loader">
+				<div style="margin-bottom: 20px; font-weight: bold; text-align: center; color: white">
+					Please, wait...
+				</div>
+				<div class="download_line"></div>
+			</div>
+		</div>
+
+		<main id="app" class="hide" style="opacity: 0">
+			<%= require('html-loader!./components/navbar/navbar.html').default %> <%=
+			require('html-loader!./components/header/header.html').default %>
+		</main>
+	</body>
 </html>

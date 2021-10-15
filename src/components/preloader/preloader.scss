@@ -1,0 +1,65 @@
+@import '../../functions';
+
+.preloader {
+    transition: 1s;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+    top: 0;
+    max-width: 100vw;
+    max-height: 100vh;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    cursor: wait;
+    user-select: none;
+
+    background: black;
+
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1) translateY(0);
+    
+    &.isLoaded {
+        transition: 1s;
+        transform: scale(10) translateY(5%);
+        opacity: 0;
+        cursor: default;
+    }
+    
+    .loader {
+        .status {
+            font-size: rem(24);
+            font-weight: bold;
+            margin-bottom: rem(10);
+            text-align: center;
+        }
+
+        .download_line {
+            transition: 0.3s cubic-bezier(0.39, 0.575, 0.565, 1);
+            position: relative;
+            width: 0%;
+            max-width: 300px;
+            height: rem(10);
+            background: white;
+            border-radius: rem(10);
+
+            &::before {
+                content: '';
+                display: block;
+                position: relative;
+                height: rem(10);
+                max-width: 100vw;
+                width: 300px;
+                border-radius: rem(10);
+                background: rgba(255, 255, 255, 0.2);
+                top: 0;
+                left: 0;
+                overflow: hidden;
+            }
+        }
+    }
+}
