@@ -1,27 +1,84 @@
 @use "sass:math";
 @import "../../functions";
+@import "../../variables";
 
 .header {
     display: flex;
     align-items: center;
     margin-top: rem(100);
 
-    .present-text {
+    .text-with-app_links {
         z-index: 30;
-        font-size: 10vw;
-        line-height: rem(150);
-        text-transform: uppercase;
-        padding: 0 rem(20);
 
-        @media screen and (min-width: 1240px) {
-            font-size: rem(124);
+        .present-text {
+            font-family: $mf;
+            font-size: 10vw;
+            line-height: rem(150);
+            text-transform: uppercase;
+            cursor: default;
+    
+            animation: fadeIn 1s cubic-bezier(0.95, 0.2, 0.795, 0.035);
+    
+            @media screen and (min-width: 1240px) {
+                font-size: rem(124);
+            }
         }
 
-        animation: presentText 1s cubic-bezier(0.95, 0.2, 0.795, 0.035);
+        .app-links {
+            margin: rem(100) 0 0 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            max-width: 40%;
+
+            .app-link {
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+                color: white;
+                transition: 0.2s;
+                border: rem(2) solid transparentize(white, 0.5);
+                border-radius: rem(15);
+                padding: rem(10) rem(20);
+
+                animation: fadeOut 1s cubic-bezier(0.95, 0.2, 0.795, 0.035);
+                
+                .app-link-text {
+                    font-family: $mf;
+                    margin-left: rem(15);
+
+                    .sub-text {
+                        font-size: rem(12);
+                        color: rgba(255, 255, 255, 0.5);
+                    }   
+                    
+                    .text {
+                        margin-top: rem(5);
+                        font-weight: bold;
+                    }
+                }
+                
+                svg {
+                    transition: 0.2s;
+                }
+
+                &:hover {
+                    border-color: #C4F07F;
+
+                    svg {
+                        transform: scale(.90);
+
+                        path {
+                            fill: #C4F07F;
+                        }
+                    }
+                }
+            }
+        }
     }
 
     .circle-appear {
-        z-index: 20;
+        z-index: 0;
         position: absolute;
         right: 30;
 
@@ -52,17 +109,5 @@
 
     100% {
         transform: rotate(720deg) scale(0.5)  skew(0deg, 0deg);
-    }
-}
-
-@keyframes presentText {
-    from {
-        transform: scale(1.2);
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1);
     }
 }
