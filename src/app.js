@@ -1,2 +1,2 @@
-import "./components/hooker";
-import "./index.scss";
+import './components/hooker';
+import './index.scss';

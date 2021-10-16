@@ -4,7 +4,8 @@
 @import "variables";
 @import "animations";
 
-html, body {
+html,
+body {
     background: $dark;
     color: white;
     overflow-x: hidden;
@@ -25,13 +26,15 @@ html, body {
 }
 
 
-.container, .container-md {
+.container,
+.container-md {
     display: block;
     margin: 0 auto;
     max-width: rem(1200);
     padding: 0 rem(20);
     width: 100%;
 }
+
 .container-md {
     max-width: rem(1250);
 }
