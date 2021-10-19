@@ -1,7 +1,6 @@
 import './preloader.scss';
 
 const preloader = {
-	opacity: 0.0,
 	content: document.querySelector('#app'),
 
 	init() {
@@ -36,9 +35,8 @@ const preloader = {
 			if (imagesLoaded <= images.length)
 				progressBar.style.width = `${progress}%`;
 
-			if (imagesLoaded >= images.length) {
+			if (imagesLoaded >= images.length)
 				preloader.hideState(preloader_html_t);
-			}
 		}
 	},
 
@@ -56,6 +54,4 @@ const preloader = {
 	}
 };
 
-document.addEventListener('DOMContentLoaded', function () {
-	preloader.init();
-});
+document.addEventListener('DOMContentLoaded', preloader.init());
