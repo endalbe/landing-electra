@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
 @font-face {
-    font-family: 'Century Gothic';
-    src: url(./assets/fonts/GOTHIC.TTF);
+    font-family: 'CenturyGothic';
+    font-style: normal;
+    font-weight: 400;
+    src: local('./assets/fonts/GOTHIC.TTF');
+    font-display: swap;
 }

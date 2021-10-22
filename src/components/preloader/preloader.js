@@ -1,13 +1,18 @@
 import './preloader.scss';
 
+function showMsg(msg) {
+	document.querySelector('.preloader-info-msg').innerHTML = msg;
+}
+
 const preloader = {
 	content: document.querySelector('#app'),
 
 	init() {
+		showMsg(`Downloading general fonts...<br>Please, wait...`);
 		let preloader_html = document.querySelector('.preloader');
-
 		this.content.classList.add('hide');
-		this.loadingState(preloader_html);
+
+		preloader.loadingState(preloader_html);
 	},
 
 	loadingState(preloader_html_t) {
@@ -15,7 +20,8 @@ const preloader = {
 			images = document.images,
 			imagesLoaded = 0;
 
-		setTimeout(() => preloader.hideState(preloader_html_t), 15000);
+		if (imagesLoaded > 5)
+			setTimeout(() => preloader.hideState(preloader_html_t), 7500);
 
 		if (images.length) {
 			for (let i = 0; i < images.length; i++) {
@@ -30,10 +36,17 @@ const preloader = {
 		}
 
 		function imageLoading() {
+			showMsg(`Downloading...`);
 			imagesLoaded++;
+
 			let progress = ((100 / images.length) * imagesLoaded) << 0;
-			if (imagesLoaded <= images.length)
+			if (imagesLoaded <= images.length) {
+				showMsg(
+					`Images downloaded: ${imagesLoaded} / ${images.length}`
+				);
+
 				progressBar.style.width = `${progress}%`;
+			}
 
 			if (imagesLoaded >= images.length)
 				preloader.hideState(preloader_html_t);
@@ -41,17 +54,35 @@ const preloader = {
 	},
 
 	hideState(preloader_html) {
-		this.content.style = `opacity: 1`;
-		this.content.classList.remove('hide');
+		if (document.fonts) {
+			showMsg(`Downloading important fonts...`);
 
-		preloader_html.classList.add('isLoaded');
-		preloader_html.innerHTML = '';
+			document.fonts
+				.load("16px 'Michroma'")
+				.then(
+					function () {
+						showMsg(`Some more...`);
+						setTimeout(() => {
+							preloader.content.style = `opacity: 1`;
+							preloader.content.classList.remove('hide');
 
-		setTimeout(() => {
-			preloader_html.remove();
-			preloader_html.hidden = true;
-		}, 1000);
+							preloader_html.classList.add('isLoaded');
+						}, 1000);
+					},
+					function () {
+						showMsg(`Downloading important fonts...`);
+					}
+				)
+				.then(function () {
+					setTimeout(() => {
+						preloader_html.classList.remove('isLoaded');
+						preloader_html.innerHTML = '';
+						preloader_html.remove();
+						preloader_html.hidden = true;
+					}, 1350);
+				});
+		}
 	}
 };
 
-document.addEventListener('DOMContentLoaded', preloader.init());
+window.addEventListener('DOMContentLoaded', preloader.init());
