@@ -2,12 +2,15 @@
 @import "../../functions";
 @import "../../variables";
 
+.header-section {
+    overflow-x: hidden;
+    max-width: 100vw;
+}
+
 .header {
     display: flex;
     align-items: center;
     margin-top: rem(100);
-    overflow-x: hidden;
-    max-width: 100vw;
 
     .text-with-app_links {
         z-index: 30;
