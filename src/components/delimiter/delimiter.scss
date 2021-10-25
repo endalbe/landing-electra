@@ -1,0 +1,42 @@
+@import '../../functions';
+
+.delimiter {
+	display: flex;
+	align-items: center;
+	border-top: rem(1) solid white;
+	border-bottom: rem(1) solid white;
+	padding: rem(5) 0 rem(15) 0;
+	justify-content: center;
+	text-transform: uppercase;
+	font-size: 2vmax;
+
+	.accent-text {
+		color: #d4f378;
+		border-right: rem(10) solid white;
+		padding-right: rem(20);
+		margin-right: rem(20);
+		font-size: 2.5vmax;
+	}
+
+	.icon-delimiter {
+        margin-right: rem(15);
+		svg {
+			width: 5vmax;
+		}
+	}
+
+	@media screen and (min-width: 768px) {
+		font-size: 5vmax;
+
+		.accent-text {
+			font-size: 5.5vmax;
+		}
+
+		.icon-delimiter {
+			svg {
+				width: 5vmax;
+				padding-top: rem(15);
+			}
+		}
+	}
+}
