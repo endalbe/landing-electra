@@ -1,6 +1,11 @@
 @import '../../functions';
 @import '../../variables';
 
+.slider-wrapper {
+    overflow: hidden;
+    max-width: 100vw;
+}
+
 #slider-blocks {
     overscroll-behavior: none;
     display: flex;
