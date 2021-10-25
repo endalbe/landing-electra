@@ -1,12 +1,14 @@
 @import '../../functions';
 @import '../../variables';
 
-// TODO Mobile adaptation
-
 #slider-blocks {
     overscroll-behavior: none;
     display: flex;
     flex-wrap: nowrap;
+
+    .accent-line {
+        transform: translateY(-1vmax);
+    }
 
     .slide {
         display: block;
@@ -131,8 +133,8 @@
 
             .headline {
                 font-size: 3vmax;
-                transform: translate(-25%);
-                width: 150%;
+                transform: translate(-15%);
+                width: 100vw;
             }
         }
     }
@@ -220,7 +222,7 @@
 
     100% {
         opacity: 1;
-        transform: translateX(-25%);
+        transform: translateX(-15%);
     }
 }
 
