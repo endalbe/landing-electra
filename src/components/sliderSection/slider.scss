@@ -1,7 +1,7 @@
 @import '../../functions';
 @import '../../variables';
 
-// TODO Mobile adaptation 
+// TODO Mobile adaptation
 
 #slider-blocks {
     overscroll-behavior: none;
@@ -10,7 +10,7 @@
 
     .slide {
         display: block;
-        border-top: rem(1) solid #B8B8B8;
+        border-top: rem(1) solid #b8b8b8;
         min-width: 100vw;
         height: 100vh;
         overflow: hidden;
@@ -28,14 +28,14 @@
             }
 
             .slider-container {
-                border-left: rem(1) solid #B8B8B8;
+                border-left: rem(1) solid #b8b8b8;
                 min-height: 100vh;
 
                 .wrapper {
                     display: flex;
                     align-items: center;
 
-                    @media screen and (orientation:portrait) {
+                    @media screen and (orientation: portrait) {
                         flex-direction: column;
                     }
 
@@ -43,7 +43,7 @@
                         flex-direction: row;
                     }
 
-                    @media screen and (orientation:landscape) {
+                    @media screen and (orientation: landscape) {
                         flex-direction: row;
                     }
                 }
@@ -71,7 +71,6 @@
                             text-align: left;
                             margin-top: rem(0);
                         }
-
                     }
                 }
             }
@@ -91,10 +90,9 @@
                 max-width: 50vw;
                 overflow: hidden;
                 transform: translate(2);
-                    position: relative;
+                position: relative;
 
-
-                @media screen and (orientation:landscape) {
+                @media screen and (orientation: landscape) {
                     max-height: 100vh;
                 }
 
@@ -120,17 +118,6 @@
             }
         }
     }
-
-    #slide_1 {
-        // .img-poster {
-        //     @media (min-width: 576px) {
-        //         object-fit: contain;
-        //         width: max-content;
-        //     }
-        // }
-        
-    }
-
 
     #slide_2 {
         &.active {
@@ -161,13 +148,16 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+
             margin-left: 0 7.5vw;
-            width: 40%;
+            padding: 0 7.5vw;
+            max-width: 80%;
 
             @media (min-width: 576px) {
+                max-width: 60%;
                 padding-left: 5%;
             }
-
+            
             .text {
                 max-width: 100%;
                 font-weight: $rf;
@@ -181,26 +171,33 @@
                 z-index: 20;
                 height: 30%;
                 width: 30%;
+
+                @media (max-width: 576px) {
+                    display: none;
+                }
             }
         }
 
         .img-poster {
             width: 100%;
+            height: 40vh;
             transform: scale(1);
-            height: rem(150);
-
-            @media (max-width: 576px) {
-                height: 70vh;
-            }
 
             img {
-                object-fit: cover;
-                height: 100%;
+                object-fit: contain;
+                min-height: 40vh;
+            }
+
+            @media (min-width: 576px) {
+                min-height: 70vh;
+
+                img {
+                    object-fit: cover;
+                    min-height: 70vh;
+                }
             }
         }
-
     }
-
 }
 
 @keyframes fadeInSlide {
@@ -227,7 +224,6 @@
     }
 }
 
-
 @keyframes circleMove {
     0% {
         transform: rotate(0deg) scale(1);
@@ -247,7 +243,6 @@
         opacity: 0.5;
     }
 }
-
 
 @keyframes fadeOutSlide {
     0% {

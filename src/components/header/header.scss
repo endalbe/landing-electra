@@ -26,12 +26,12 @@
         }
 
         .app-links {
-            @extend .d-flex, .flex-column, .flex-md-row;
+            @extend .d-flex, .flex-column, .flex-md-row, .ms-3;
             margin: rem(100) 0 0 0;
             flex-direction: row;
 
             .app-link {
-                @extend .mb-3, .ms-lg-2;
+                @extend .mb-3, .me-md-2;
                 display: flex;
                 align-items: center;
                 text-decoration: none;
@@ -94,30 +94,26 @@
 }
 
 .slide-msg {
-    transition: 1;
-    color: #555;
     margin: rem(50) 0 rem(130) 0;
-    font-size: rem(30);
-    font-family: $cgf;
-    animation: fadeOut 2s ease-in-out;
-    animation-delay: 1s;
 
     .fa-angle-double-down {
         animation: arrowAnimation 2.5s ease-in-out 20;
         animation-delay: 1s;
+        transform: scaleX(2);
     }
 }
+
 @keyframes arrowAnimation {
     0% {
-        transform: translateY(rem(-5));
+        transform: translateY(rem(-5)) scaleX(3);
     }
 
     50% {
-        transform: translateY(rem(5));
+        transform: translateY(rem(5)) scaleX(1.5);
     }
 
     100% {
-        transform: translateY(rem(-5));
+        transform: translateY(rem(-5)) scaleX(3);
     }
 }
 
