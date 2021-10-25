@@ -3,8 +3,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 let sections = gsap.utils.toArray('.slide');
-let maxWidth = 0,
-	MaxHeight = 0;
+let maxWidth = 0;
 
 gsap.registerPlugin(ScrollTrigger);
 ScrollTrigger.defaults({
@@ -19,15 +18,8 @@ let waitingLoad = setInterval(() => {
 				maxWidth += section.offsetWidth + 50;
 			});
 		};
-		const getMaxHeight = () => {
-			MaxHeight = 0;
-			sections.forEach((section) => {
-				MaxHeight += section.offsetWidth + 50;
-			});
-		};
 
 		getMaxWidth();
-		getMaxHeight();
 
 		ScrollTrigger.addEventListener('refreshInit', getMaxWidth);
 

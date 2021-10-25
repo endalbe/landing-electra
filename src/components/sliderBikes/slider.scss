@@ -2,18 +2,16 @@
 @import '../../functions';
 
 .slide-bike {
-    transition: 1s;
+    transition: 0.5s;
     opacity: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
 
     &.active {
-        transition: 0.5;
-        opacity: 1 !important;
-        transform: scale(1.15) !important;
+        opacity: 1;
+        transform: scale(1.25);
     }
 
     .img-fluid {
@@ -30,6 +28,7 @@
         font-size: 5.5vmax;
         font-family: $mf;
         text-align: center;
+        height: 100vh !important;
 
         @media (max-width: 576px) {
             font-size: 3vmax;
