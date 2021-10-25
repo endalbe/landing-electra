@@ -1,0 +1,23 @@
+@import '../../functions';
+
+.creating-section {
+    .first-text {
+        padding-left: 5vw;
+        margin-bottom: rem(30);
+    }
+
+    .text-small {
+        font-size: 1vmax;
+        max-width: rem(400);
+    }
+
+    .text-big {
+        font-size: 3vmax;
+        text-transform: uppercase;
+    }
+
+    .img-fluid {
+        max-width: 100%;
+        vertical-align: middle;
+    }
+}

@@ -17,9 +17,12 @@ let waitingLoad = setInterval(() => {
 					pin: true,
 					anticipatePin: 1,
 					start: 'center center',
-					end: () => '+=' + slide.offsetHeight,
+					end: '+=100%',
 					toggleClass: 'active',
-					snap: 1
+					snap: 1,
+					scaleX: 0,
+					transformOrigin: 'left center',
+					ease: 'none'
 				}
 			});
 		});

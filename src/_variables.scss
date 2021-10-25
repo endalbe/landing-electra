@@ -1,5 +1,12 @@
  $dark: black;
 
- $cgf: 'CenturyGothic', sans-serif;
- $rf: 'Roboto', sans-serif;
- $mf: 'Michroma', sans-serif;
+ $cgf: 'CenturyGothic',
+ sans-serif;
+ $rf: 'Roboto',
+ sans-serif;
+ $mf: 'Michroma',
+ sans-serif;
+
+ .accent-line {
+     transform: translateY(-1vmax);
+ }

@@ -8,10 +8,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    transform: none;
 
     &.active {
-        opacity: 1;
-        transform: scale(1.25);
+        transition: 1s;
+        opacity: 1 !important;
+        transform: scale(1.25) !important;
     }
 
     .img-fluid {
@@ -39,7 +41,7 @@
 
             svg {
                 animation-delay: 5s;
-                animation: circleMoveAround 10s cubic-bezier(0.90, 0.025, 0.90, 0.025) infinite;
+                animation: circleMoveAround 5s cubic-bezier(0.90, 0.025, 0.90, 0.025) infinite;
                 width: 50vw;
                 height: 50vh;
             }
