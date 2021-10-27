@@ -15,13 +15,11 @@ let waitingLoad = setInterval(() => {
 					trigger: slide,
 					scrub: true,
 					pin: true,
-					anticipatePin: 1,
 					start: 'center center',
 					end: '+=100%',
 					toggleClass: 'active',
-					snap: 1,
 					scaleX: 0,
-					transformOrigin: 'left center',
+					transformOrigin: 'center center',
 					ease: 'none'
 				}
 			});
@@ -29,4 +27,4 @@ let waitingLoad = setInterval(() => {
 
 		clearInterval(waitingLoad);
 	}
-}, 1000);
+}, 2500);
