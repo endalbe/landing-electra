@@ -6,4 +6,4 @@ Website for [electra.fund](https://electra.fund).
 |----|:----|:----|
 | Install | `yarn` | `npm install` |
 | Serve | `yarn serve` | `npm run serve` |
-| Production | `yarn build` | `npm run build` |
+| Build | `yarn build` | `npm run build` |
