@@ -20,9 +20,6 @@ const preloader = {
 			images = document.images,
 			imagesLoaded = 0;
 
-		if (imagesLoaded > 5)
-			setTimeout(() => preloader.hideState(preloader_html_t), 7500);
-
 		if (images.length) {
 			for (let i = 0; i < images.length; i++) {
 				let tmpImageContainer = new Image();
@@ -38,6 +35,9 @@ const preloader = {
 		function imageLoading() {
 			showMsg(`Downloading...`);
 			imagesLoaded++;
+
+			if (imagesLoaded > 5)
+				setTimeout(() => preloader.hideState(preloader_html_t), 7500);
 
 			let progress = ((100 / images.length) * imagesLoaded) << 0;
 			if (imagesLoaded <= images.length) {
