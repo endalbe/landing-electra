@@ -26,6 +26,9 @@
     }
 
     &.last-slide {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         text-transform: uppercase;
         font-size: 5.5vmax;
         font-family: $mf;

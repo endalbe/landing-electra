@@ -1,0 +1,78 @@
+@import '../../functions';
+@import '../../variables';
+
+.circle-text-block {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    max-width: 100vw;
+
+    .container {
+        padding: 75vh 0;
+        transform: scale(0.65);
+
+        @media screen and (max-height: 568px) {
+            transform: scale(1);
+            padding: 120vh 0 !important;
+        }
+
+        @media screen and (min-width: 768px) {
+            transform: scale(1);
+            padding: 75vh 0;
+        }
+    }
+
+    .text {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: $rf;
+        font-size: rem(24);
+        transform: scale(0.8);
+
+        @media screen and (min-width: 768px) {
+            transform: scale(1);
+        }
+
+        .text-rounded-for-img-first {
+            position: absolute;
+            letter-spacing: rem(15);
+            animation: 120s circleMoveAroundLight infinite;
+            animation-delay: 7.5s;
+        }
+
+        .text-rounded-for-img-second {
+            position: absolute;
+            letter-spacing: rem(3.5);
+            animation: 80s circleMoveAroundLight infinite;
+            animation-delay: 7.5s;
+        }
+
+        .text-rounded-for-img-last {
+            position: absolute;
+            letter-spacing: rem(25);
+            animation: 100s circleMoveAroundLight infinite;
+            animation-delay: 7.5s;
+        }
+    }
+
+    .img-fern {
+        position: absolute;
+        display: block;
+        max-width: rem(425);
+        max-height: rem(380);
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        transform: rotate(15deg);
+
+        .img-fluid {
+            object-fit: contain;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}

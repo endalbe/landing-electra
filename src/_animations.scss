@@ -37,3 +37,34 @@
         opacity: 1;
     }
 }
+
+
+@keyframes circleMoveAround {
+    0% {
+        transform: rotate(0deg) scale(0.5) skew(0deg, 0deg);
+    }
+
+    60% {
+        transform: rotate(360deg) scale(1) skew(0deg, 5deg);
+    }
+
+    100% {
+        transform: rotate(720deg) scale(0.5) skew(0deg, 0deg);
+    }
+}
+
+
+
+@keyframes circleMoveAroundLight {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    60% {
+        transform: rotate(360deg);
+    }
+
+    100% {
+        transform: rotate(720deg);
+    }
+}
