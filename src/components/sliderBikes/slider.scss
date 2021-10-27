@@ -2,16 +2,23 @@
 @import '../../functions';
 
 .slide-bike {
-    transition: 0.5s;
+    transition: 0.35s;
     opacity: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    transform: none;
+    position: relative;
+    max-height: 100vh;
+    transform: scale(0);
+
+    .big-text {
+        transition: 0.5s;
+        width: 100vw;
+    }
 
     &.active {
-        transition: 1s;
+        transition: 0.5s;
         opacity: 1 !important;
         transform: scale(1.25) !important;
     }
