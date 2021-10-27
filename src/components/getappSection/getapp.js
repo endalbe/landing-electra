@@ -1,0 +1,1 @@
+import './getapp.scss';
