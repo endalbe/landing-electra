@@ -69,6 +69,7 @@
                         text-transform: uppercase;
                         margin-bottom: rem(50);
                         margin-top: rem(35);
+                        line-height: 5vmax;
 
                         @media (min-width: 576px) {
                             text-align: left;
