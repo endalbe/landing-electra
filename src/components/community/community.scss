@@ -9,54 +9,6 @@
         }
     }
 
-    .text-rounded-for-link {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-decoration: none;
-        color: white;
-        letter-spacing: rem(10);
-        z-index: 10;
-        position: relative;
-        width: 40%;
-        transform: translateY(rem(-20));
-
-        .rounded-text {
-            transition: 5s;
-            transform: rotate(0deg);
-        }
-
-        .linear-text {
-            position: relative;
-            z-index: 30;
-            letter-spacing: normal;
-            margin-top: -230%;
-            color: #C4F07F;
-            padding: rem(30);
-
-            .arrow {
-                transition: 0.35s;
-            }
-        }
-
-        &:hover {
-            .linear-text {
-                .arrow {
-                    transform: translateX(10%);
-
-                    path {
-                        fill: #C4F07F;
-                    }
-                }
-            }
-
-            .rounded-text {
-                transform: rotate(360deg);
-            }
-        }
-    }
-
     .headline {
         font-size: rem(48);
         font-family: $mf;
@@ -74,7 +26,7 @@
         color: #CCCBCB;
     }
 
-    .seccond-text {
+    .second-text {
         margin-top: rem(30);
     }
 }
