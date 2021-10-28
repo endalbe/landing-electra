@@ -1,0 +1,48 @@
+<div class="transport-section">
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-2 align-items-center">
+            <div class="images transportImgs">
+                <img width="100%" class="d-none d-md-block ScooterImg active" src="../../assets/images/sqrScooter.png"
+                    alt="">
+                <img width="100%" class="d-none d-md-block BikeImg" src="../../assets/images/sqrMoto.png" alt="">
+                <img width="100%" class="d-none d-md-block MotoImg" src="../../assets/images/sqrCar.png" alt="">
+                <img width="100%" class="d-none d-md-block CarImg" src="../../assets/images/sqrVelo.png" alt="">
+            </div>
+
+            <div class="list">
+                <ul class="list-wrapper">
+                    <li data-aos="zoom-out-up" onmouseover="showScooterImg()"><span>01</span> Scooter</li>
+                    <img data-aos="zoom-in-left" width="100%" class="d-block d-md-none"
+                        src="../../assets/images/sqrScooter.png" alt="">
+
+                    <li data-aos="zoom-out-up" onmouseover="showBikeImg()"><span>02</span> Bikes</li>
+                    <img data-aos="zoom-in-right" width="100%" class="d-block d-md-none"
+                        src="../../assets/images/sqrMoto.png" alt="">
+
+                    <li data-aos="zoom-out-up" onmouseover="showMotoImg()"><span>03</span> Motorbikes</li>
+                    <img data-aos="zoom-in-left" width="100%" class="d-block d-md-none"
+                        src="../../assets/images/sqrCar.png" alt="">
+
+                    <li data-aos="zoom-out-up" onmouseover="showCarImg()"><span>04</span> Cars</li>
+                    <img data-aos="zoom-in-right" width="100%" class="d-block d-md-none"
+                        src="../../assets/images/sqrVelo.png" alt="">
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function resetImages(show) {
+        document
+            .querySelectorAll('.transportImgs img')
+            .forEach((image) => image.classList.remove('active'));
+        document.querySelector(`.${show}`).classList.add('active');
+    }
+
+    const showScooterImg = () => resetImages('ScooterImg');
+    const showBikeImg = () => resetImages('BikeImg');
+    const showMotoImg = () => resetImages('MotoImg');
+    const showCarImg = () => resetImages('CarImg');
+
+</script>

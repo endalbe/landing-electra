@@ -10,7 +10,6 @@ let waitingLoad = setInterval(() => {
 	if (!document.querySelector('#app').classList.contains('hide')) {
 		sections.forEach((slide) => {
 			gsap.to(slide, {
-				defaults: { ease: 'none' },
 				scrollTrigger: {
 					trigger: slide,
 					scrub: true,

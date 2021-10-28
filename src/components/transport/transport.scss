@@ -1,0 +1,46 @@
+@import '../../functions';
+@import '../../variables';
+
+.transport-section {
+    margin-top: rem(120);
+
+    .images {
+        img {
+            transition: 0.20s;
+            position: absolute;
+            max-width: rem(320);
+            transform: translateY(-50%) scale(0);
+            opacity: 0;
+        }
+
+        .active {
+            opacity: 1;
+            transform: translateY(-50%) scale(1.25);
+        }
+    }
+
+    .list {
+        .list-wrapper {
+            display: flex;
+            flex-direction: column;
+
+            li {
+                display: flex;
+                align-items: center;
+                list-style: none;
+                font-size: 2.75vmax;
+                border-bottom: rem(3) solid #d6d6d6;
+                margin-bottom: 5vmax;
+                padding: rem(15) 0;
+                cursor: pointer;
+                font-size: $mf;
+
+                span {
+                    min-width: rem(100);
+                    margin-right: rem(100);
+                    color: #C4F07F;
+                }
+            }
+        }
+    }
+}

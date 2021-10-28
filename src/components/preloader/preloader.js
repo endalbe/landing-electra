@@ -1,7 +1,8 @@
 import './preloader.scss';
 
 function showMsg(msg) {
-	document.querySelector('.preloader-info-msg').innerHTML = msg;
+	if (document.querySelector('.preloader-info-msg'))
+		document.querySelector('.preloader-info-msg').innerHTML = msg;
 }
 
 const preloader = {
@@ -54,9 +55,8 @@ const preloader = {
 	},
 
 	hideState(preloader_html) {
+		showMsg('Downloading important fonts...');
 		if (document.fonts) {
-			showMsg(`Downloading important fonts...`);
-
 			document.fonts
 				.load("16px 'Michroma'")
 				.then(
