@@ -36,8 +36,15 @@
                 font-size: $mf;
 
                 span {
+                    transition: 0.15s;
                     margin-right: rem(100);
                     color: #C4F07F;
+                }
+
+                &:hover, &:focus {
+                    span {
+                        transform: translateX(rem(50));
+                    }
                 }
             }
         }
