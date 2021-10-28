@@ -55,3 +55,24 @@ $mf: 'Michroma', sans-serif;
 		}
 	}
 }
+
+.line_ {
+	display: inline-block;
+	max-width: 30vw;
+	width: 10vw;
+
+	@media screen and (min-width: 768px) {
+		width: 30vw;
+	}
+
+	@media screen and (min-width: 1240px) {
+		width: 35%;
+	}
+
+	height: 1px;
+	background: white;
+	color: white;
+	border-radius: rem(10);
+
+	animation: viewLines 0.75s cubic-bezier(0.975, 0.185, 0.22, 0.1);
+}

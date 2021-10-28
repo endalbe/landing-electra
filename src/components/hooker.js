@@ -9,3 +9,4 @@ import './community/community';
 import './getappSection/getapp';
 import './transport/transport';
 import './statue/statue';
+import './footer/footer';
