@@ -19,8 +19,19 @@ const config = {
 	plugins: [
 		new HtmlWebpackPlugin({
 			title: 'Electra',
+			filename: 'index.html',
 			template: 'src/index.html',
-			minify: true
+			minify: true,
+			chunks: ['main']
+		}),
+
+		new HtmlWebpackPlugin({
+			inject: true,
+			title: 'Invest | Electra',
+			filename: 'invest.html',
+			template: 'src/invest.html',
+			minify: true,
+			chunks: ['main']
 		}),
 
 		new BrowserSyncPlugin({
