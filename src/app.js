@@ -1,5 +1,6 @@
 import './index.scss';
 import './components/hooker';
+import './Invest/hooker';
 import AOS from 'aos';
 
 let waitingLoad = setInterval(() => {
