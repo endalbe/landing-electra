@@ -1,0 +1,36 @@
+@import '../../../variables';
+@import '../../../functions';
+
+.second-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: rem(120);
+
+    .text {
+        color: #C4F07F;
+        text-align: center;
+        margin-bottom: rem(60);
+        font-size: 5vmax;
+        z-index: 20;
+        font-family: $mf;
+        text-transform: uppercase;
+    }
+
+    .figure {
+        position: absolute;
+        max-height: 100vh;
+        z-index: 0;
+        width: 100vw;
+
+        @media screen and (min-width: 768px) {
+            width: 50vw;
+        }
+
+        svg {
+            animation: circleMoveAroundLight 10s infinite linear;
+        }
+    }
+}
