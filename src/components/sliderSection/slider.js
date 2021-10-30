@@ -12,9 +12,9 @@ ScrollTrigger.defaults({
 
 let waitingLoad = setInterval(() => {
 	if (
-		(!document.querySelector('#app').classList.contains('hide') &&
-			document.querySelector('#slider-blocks-franchise')) ||
-		document.querySelector('#slider-blocks')
+		!document.querySelector('#app').classList.contains('hide') &&
+		(document.querySelector('#slider-blocks-franchise') ||
+			document.querySelector('#slider-blocks'))
 	) {
 		const getMaxWidth = () => {
 			maxWidth = 0;
@@ -33,7 +33,9 @@ let waitingLoad = setInterval(() => {
 			width: '100vh',
 
 			scrollTrigger: {
-				trigger: ['#slider-blocks', '#slider-blocks-franchise'],
+				trigger: document.querySelector('#slider-blocks-franchise')
+					? '#slider-blocks-franchise'
+					: '#slider-blocks',
 				pin: true,
 				scrub: true,
 				end: () => `+=${maxWidth}`
