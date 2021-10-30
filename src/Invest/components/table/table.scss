@@ -1,0 +1,57 @@
+@import '../../../variables';
+@import '../../../functions';
+
+.table-section {
+    margin-top: rem(160);
+    font-family: $mf;
+
+    .table {
+        border: rem(1) solid white;
+        font-size: rem(18);
+
+        .head-block {
+            text-align: center;
+            border-bottom: rem(1) solid white;
+            padding: rem(20) 0;
+        }
+
+        .list {
+            padding: rem(20);
+
+            .item {
+                display: flex;
+                align-items: center;
+                margin: rem(25) 0;
+
+                .text {
+                    font-size: rem(18);
+                }
+
+                .icon {
+                    margin-right: rem(15);
+                }
+            }
+        }
+    }
+
+    .btn-link {
+        background: #C4F07F;
+        font-size: rem(18);
+        text-align: center;
+        width: 100%;
+        display: block;
+        padding: rem(15) 0;
+        color: black;
+        text-decoration: none;
+        transition: 0.25s;
+        
+        &:hover,
+        &:focus {
+            background: darken(#c4f07f, 15);
+        }
+
+        &:active {
+            transform: scale(0.9);
+        }
+    }
+}
