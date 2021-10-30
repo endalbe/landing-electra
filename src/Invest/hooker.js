@@ -5,3 +5,4 @@ import './components/delimiter/delimiter';
 import './components/benefits/benefits';
 import './components/table/table';
 import './components/expand/expand';
+import './components/franchise/franchise';
