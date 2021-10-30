@@ -31,7 +31,7 @@
         }
 
         .app-links {
-            @extend .d-flex, .flex-column, .flex-md-row, .ms-3;
+            @extend .d-flex, .flex-column, .flex-md-row, .ms-md-3;
             margin: rem(100) 0 0 0;
             flex-direction: row;
 

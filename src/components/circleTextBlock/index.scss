@@ -31,11 +31,7 @@
         justify-content: center;
         font-weight: $rf;
         font-size: rem(24);
-        transform: scale(0.8);
-
-        @media screen and (min-width: 768px) {
-            transform: scale(1);
-        }
+        transform: scale(1);
 
         .text-rounded-for-img-first {
             position: absolute;
