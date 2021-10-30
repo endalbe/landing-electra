@@ -53,14 +53,15 @@
             color: transparentize(white, 0.5);
         }
     }
+}
 
-    .year {
-        cursor: default;
-        animation: fadeOut 1s cubic-bezier(0.25, 0.15, 0.15, 0.1);
+.year {
+    cursor: default;
+    font-family: $mf;
+    animation: fadeOut 1s cubic-bezier(0.25, 0.15, 0.15, 0.1);
 
-        @media screen and (max-width: 768px) {
-            display: none;
-        }
+    @media screen and (max-width: 768px) {
+        display: none;
     }
 }
 

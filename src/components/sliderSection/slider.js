@@ -11,7 +11,10 @@ ScrollTrigger.defaults({
 });
 
 let waitingLoad = setInterval(() => {
-	if (!document.querySelector('#app').classList.contains('hide')) {
+	if (
+		!document.querySelector('#app').classList.contains('hide') &&
+		document.querySelector('#slider-blocks')
+	) {
 		const getMaxWidth = () => {
 			maxWidth = 0;
 			sections.forEach((section) => {

@@ -1,0 +1,33 @@
+@import '../../../variables';
+@import '../../../functions';
+
+.about-section {
+    .headline {
+        font-size: 5vmax;
+        text-transform: uppercase;
+    }
+
+    .poster-with-arrow {
+        margin-bottom: rem(120);
+
+        .poster {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .arrow-to-down {
+                position: absolute;
+                bottom: -15vmax;
+
+            	@media screen and (min-width: 567px) {
+                    bottom: -7.5vmax;    
+                }
+            }
+        }
+    }
+
+    .text {
+        line-height: rem(30);
+    }
+}

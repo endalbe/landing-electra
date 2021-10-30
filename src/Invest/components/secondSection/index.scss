@@ -2,6 +2,7 @@
 @import '../../../functions';
 
 .second-section {
+    overflow: hidden;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -23,7 +24,8 @@
         position: absolute;
         max-height: 100vh;
         z-index: 0;
-        width: 100vw;
+        width: 75vw;
+        overflow: hidden;
 
         @media screen and (min-width: 768px) {
             width: 50vw;
