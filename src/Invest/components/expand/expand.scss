@@ -1,0 +1,76 @@
+@import '../../../variables';
+@import '../../../functions';
+
+.expand-section {
+    min-height: 100vh;
+    font-size: 7vmax;
+    text-transform: uppercase;
+    position: relative;
+    width: 100%;
+    margin-top: rem(200);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .text {
+        max-width: 90%;
+        z-index: 1000;
+        line-height: 10vmax;
+    }
+
+    .point {
+        svg {
+            transform: translateY(-50%);
+        }
+    }
+
+    .circle-right, .circle {
+        position: absolute;
+        display: block;
+        top: 25%;
+        right: 0;
+        z-index: 10;
+
+        svg {
+            z-index: 10;
+        }
+    }
+
+    .circle {
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        animation: circle-anim-expand-section 30s infinite linear;
+
+        svg {
+            z-index: 10;
+        }
+    }
+}
+
+@keyframes circle-anim-expand-section {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0;
+    }
+
+    25% {
+        transform: translate(30%, -10%) scale(0.95);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translate(-10%, -20%) scale(0.7);
+    }
+
+    75% {
+        transform: translate(25%, 10%) scale(1);
+    }
+
+    100% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0;
+    }
+}
