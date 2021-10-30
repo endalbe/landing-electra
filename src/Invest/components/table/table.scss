@@ -6,7 +6,11 @@
     font-family: $mf;
 
     .table {
-        border: rem(1) solid white;
+        border: {
+            top: rem(1) solid white;
+            left: rem(1) solid white;
+            right: rem(1) solid white;
+        }
         font-size: rem(18);
 
         .head-block {
@@ -22,6 +26,7 @@
                 display: flex;
                 align-items: center;
                 margin: rem(25) 0;
+                font-family: $rf;
 
                 .text {
                     font-size: rem(18);
