@@ -1,15 +1,25 @@
 @import '../../functions';
+@import '~bootstrap/scss/mixins/_breakpoints.scss';
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
 
 .creating-section {
     .first-text {
-        padding-left: 5vw;
         margin-bottom: rem(30);
+
+        @include media-breakpoint-up(md) {
+            padding-left: 5vw;
+        }
     }
 
     .text-small {
-        font-size: 1vmax;
+        font-size: 1.8vmax;
         max-width: rem(400);
-        color: #CCCBCB;
+        color: #cccbcb;
+
+        @include media-breakpoint-up(md) {
+            font-size: 1vmax;
+        }
     }
 
     .text-big {

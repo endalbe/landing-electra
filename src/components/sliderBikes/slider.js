@@ -13,7 +13,7 @@ let waitingLoad = setInterval(() => {
 				scrollTrigger: {
 					trigger: slide,
 					scrub: true,
-					pin: true,
+					pin: false,
 					start: 'center center',
 					end: '+=100%',
 					toggleClass: 'active',

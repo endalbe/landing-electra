@@ -1,7 +1,10 @@
 @import '../../../functions';
 
-.delimiter {
+._special_1 {
 	margin: rem(150) 0 rem(200) 0;
+}
+
+.delimiter {
 	display: flex;
 	align-items: center;
 	border-top: rem(1) solid white;

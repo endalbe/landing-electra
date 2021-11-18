@@ -13,6 +13,7 @@
     margin-top: rem(100);
 
     .text-with-app_links {
+        isolation: isolate;
         z-index: 30;
 
         .present-text {
@@ -32,8 +33,11 @@
 
         .app-links {
             @extend .d-flex, .flex-column, .flex-md-row, .ms-md-3;
-            margin: rem(100) 0 0 0;
             flex-direction: row;
+
+            @include media-breakpoint-up(md) {
+                margin: rem(100) 0 0 0;
+            }
 
             .app-link {
                 @extend .mb-3, .me-md-2;

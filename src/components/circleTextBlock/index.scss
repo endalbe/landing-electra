@@ -1,5 +1,8 @@
 @import '../../functions';
 @import '../../variables';
+@import '~bootstrap/scss/mixins/_breakpoints.scss';
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
 
 .circle-text-block {
     position: relative;
@@ -12,7 +15,7 @@
 
     .container {
         padding: 75vh 0;
-        transform: scale(0.65);
+        transform: scale(0.75);
 
         @media screen and (max-height: 568px) {
             transform: scale(1);
@@ -31,7 +34,13 @@
         justify-content: center;
         font-weight: $rf;
         font-size: rem(24);
-        transform: scale(1);
+        isolation: isolate;
+        z-index: 2;
+
+        @include media-breakpoint-up(md) {
+            isolation: isolate;
+            z-index: 1;
+        }
 
         .text-rounded-for-img-first {
             position: absolute;
@@ -64,6 +73,12 @@
         height: 100%;
         overflow: hidden;
         transform: rotate(15deg);
+        z-index: 1;
+
+        @include media-breakpoint-up(md) {
+            isolation: isolate;
+            z-index: 2;
+        }
 
         .img-fluid {
             object-fit: contain;

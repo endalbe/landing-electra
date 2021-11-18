@@ -46,7 +46,7 @@
 		font-size: 5.5vmax;
 		font-family: $mf;
 		text-align: center;
-		height: 100vh !important;
+		min-height: 100vh;
 
 		@media (max-width: 576px) {
 			font-size: 3vmax;

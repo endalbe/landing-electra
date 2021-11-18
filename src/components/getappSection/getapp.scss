@@ -3,6 +3,9 @@
 
 .get-app-section-block {
     margin-top: rem(120);
+    max-width: 100vw;
+    overflow: hidden;
+
     .text {
         line-height: rem(40);
     }
@@ -10,10 +13,14 @@
     .phone-screenshot {
         overflow: hidden;
         max-height: rem(700);
+        max-width: 100vw;
 
         img {
+            overflow: hidden;
             width: auto;
             height: 100%;
+            max-height: rem(700);
+            max-width: 50vw;
         }
     }
 
