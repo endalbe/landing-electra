@@ -1,66 +1,66 @@
 import './slider.scss';
 import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import {ScrollTrigger} from 'gsap/ScrollTrigger';
 
-let sections = gsap.utils.toArray('.slide');
+const sections = gsap.utils.toArray('.slide');
 let maxWidth = 0;
 
 gsap.registerPlugin(ScrollTrigger);
 ScrollTrigger.defaults({
-	anticipatePin: 1
+  anticipatePin: 1,
 });
 
-let waitingLoad = setInterval(() => {
-	if (
-		!document.querySelector('#app').classList.contains('hide') &&
+const waitingLoad = setInterval(() => {
+  if (
+    !document.querySelector('#app').classList.contains('hide') &&
 		(document.querySelector('#slider-blocks-franchise') ||
 			document.querySelector('#slider-blocks'))
-	) {
-		const getMaxWidth = () => {
-			maxWidth = 0;
-			sections.forEach((section) => {
-				maxWidth += section.offsetWidth + 50;
-			});
-		};
+  ) {
+    const getMaxWidth = () => {
+      maxWidth = 0;
+      sections.forEach((section) => {
+        maxWidth += section.offsetWidth + 50;
+      });
+    };
 
-		getMaxWidth();
+    getMaxWidth();
 
-		ScrollTrigger.addEventListener('refreshInit', getMaxWidth);
+    ScrollTrigger.addEventListener('refreshInit', getMaxWidth);
 
-		gsap.to(sections, {
-			xPercent: -100 * (sections.length - 1),
-			ease: 'none',
-			width: '100vh',
+    gsap.to(sections, {
+      xPercent: -100 * (sections.length - 1),
+      ease: 'none',
+      width: '100vh',
 
-			scrollTrigger: {
-				trigger: document.querySelector('#slider-blocks-franchise')
-					? '#slider-blocks-franchise'
-					: '#slider-blocks',
-				pin: true,
-				scrub: true,
-				end: () => `+=${maxWidth}`
-			}
-		});
+      scrollTrigger: {
+        trigger: document.querySelector('#slider-blocks-franchise') ?
+					'#slider-blocks-franchise' :
+					'#slider-blocks',
+        pin: true,
+        scrub: true,
+        end: () => `+=${maxWidth}`,
+      },
+    });
 
-		sections.forEach((sct, i) => {
-			getMaxWidth();
-			ScrollTrigger.create({
-				trigger: sct,
-				start: () =>
-					`top top-=${
-						(sct.offsetLeft - window.innerWidth / 2) *
+    sections.forEach((sct) => {
+      getMaxWidth();
+      ScrollTrigger.create({
+        trigger: sct,
+        start: () =>
+          `top top-=${
+            (sct.offsetLeft - window.innerWidth / 2) *
 						(maxWidth / (maxWidth - window.innerWidth))
-					}`,
-				end: () =>
-					`+=${
-						sct.offsetWidth *
+          }`,
+        end: () =>
+          `+=${
+            sct.offsetWidth *
 							(maxWidth / (maxWidth - window.innerWidth)) +
 						100
-					}`,
-				toggleClass: { targets: sct, className: 'active' }
-			});
-		});
+          }`,
+        toggleClass: {targets: sct, className: 'active'},
+      });
+    });
 
-		clearInterval(waitingLoad);
-	}
+    clearInterval(waitingLoad);
+  }
 }, 1000);

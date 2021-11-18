@@ -8,6 +8,8 @@
     "browser-sync": "^2.27.5",
     "browser-sync-webpack-plugin": "^2.3.0",
     "css-loader": "^6.4.0",
+    "eslint": "^8.2.0",
+    "eslint-config-google": "^0.14.0",
     "html-loader": "^2.1.2",
     "html-webpack-plugin": "^5.3.2",
     "jshint": "^2.13.1",
@@ -27,6 +29,7 @@
   "version": "1.0.0",
   "description": "Electra Landing",
   "name": "landing-electra",
+  "license": "MIT",
   "scripts": {
     "build": "webpack --progress --mode=production --node-env=production",
     "build:dev": "webpack --progress --mode=development",

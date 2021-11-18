@@ -3,12 +3,12 @@ import './components/hooker';
 import './Invest/hooker';
 import AOS from 'aos';
 
-let waitingLoad = setInterval(() => {
-	if (!document.querySelector('#app').classList.contains('hide')) {
-		AOS.init();
+const waitingLoad = setInterval(() => {
+  if (!document.querySelector('#app').classList.contains('hide')) {
+    AOS.init();
 
-		clearInterval(waitingLoad);
-	}
+    clearInterval(waitingLoad);
+  }
 }, 1000);
 
 const lines = document.querySelectorAll('line_');
