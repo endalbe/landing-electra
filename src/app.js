@@ -4,11 +4,11 @@ import './Invest/hooker';
 import AOS from 'aos';
 
 const waitingLoad = setInterval(() => {
-  if (!document.querySelector('#app').classList.contains('hide')) {
-    AOS.init();
+	if (!document.querySelector('#app').classList.contains('hide')) {
+		AOS.init();
 
-    clearInterval(waitingLoad);
-  }
+		clearInterval(waitingLoad);
+	}
 }, 1000);
 
 const lines = document.querySelectorAll('line_');
@@ -17,3 +17,7 @@ const links = document.querySelector('.top_navbar');
 lines.forEach((line) => line.classList.add('line_'));
 
 links.classList.remove('hidden');
+
+window.onresize = function () {
+	location.reload();
+};

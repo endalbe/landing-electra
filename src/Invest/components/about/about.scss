@@ -5,10 +5,18 @@
     .headline {
         font-size: 5vmax;
         text-transform: uppercase;
+
+        @media screen and (min-width: 1660px) {
+            font-size: rem(68);
+        }
     }
 
     .poster-with-arrow {
-        margin-bottom: rem(120);
+        margin-bottom: rem(30);
+
+        @media screen and (min-width: 768px) {
+            margin-bottom: rem(120);
+        }
 
         .poster {
             position: relative;
@@ -17,11 +25,11 @@
             align-items: center;
 
             .arrow-to-down {
-                position: absolute;
-                bottom: -15vmax;
-
-            	@media screen and (min-width: 567px) {
-                    bottom: -7.5vmax;    
+                margin-top: rem(30);
+                @media screen and (min-width: 768px) {
+                    position: absolute;
+                    bottom: -7.5vmax;
+                    margin-top: 0;
                 }
             }
         }

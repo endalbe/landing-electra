@@ -14,10 +14,15 @@
         color: #C4F07F;
         text-align: center;
         margin-bottom: rem(60);
-        font-size: 5vmax;
+        font-size: 3.5vmax;
+        isolation: isolate;
         z-index: 20;
         font-family: $mf;
         text-transform: uppercase;
+
+        		@media screen and (min-width: 576px) {
+			font-size: 5vmax;
+		}
     }
 
     .figure {

@@ -21,10 +21,14 @@
 	}
 
 	.headline {
-		font-size: 7.5vmax;
+		font-size: 5vmax;
 		font-family: $mf;
 		text-transform: uppercase;
 		line-height: 10vmax;
+
+		@media screen and (min-width: 768px) {
+			font-size: 7.5vmax;
+		}
 
 		.accent-line {
 			transform: translateY(-2.5vmax);

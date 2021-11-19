@@ -2,6 +2,7 @@
 @import "../../variables";
 
 .top_navbar {
+    background: transparent;
     &.hidden {
         opacity: 0;
     }

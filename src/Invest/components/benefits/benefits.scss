@@ -27,9 +27,13 @@
     }
 
     .headline {
-        font-size: 6vmax;
+        font-size: 4vmax;
         max-width: 70%;
         text-transform: uppercase;
+
+        @media screen and (min-width: 768px) {
+            font-size: 6vmax;
+        }
 
         @include media-breakpoint-up(xxl) {
             font-size: rem(84);

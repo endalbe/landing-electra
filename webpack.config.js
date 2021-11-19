@@ -4,6 +4,7 @@ const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const isProduction = process.env.NODE_ENV == 'production';
 const stylesHandler = 'style-loader';
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 const config = {
 	entry: './src/app.js',
@@ -38,6 +39,11 @@ const config = {
 			host: 'localhost',
 			port: 3000,
 			proxy: 'localhost:8080'
+		}),
+		new FaviconsWebpackPlugin({
+			logo: 'src/assets/favicon.png',
+			cache: true,
+			inject: true
 		})
 	],
 

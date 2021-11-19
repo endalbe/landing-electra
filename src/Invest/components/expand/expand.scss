@@ -3,7 +3,6 @@
 
 .expand-section {
     min-height: 100vh;
-    font-size: 7vmax;
     text-transform: uppercase;
     position: relative;
     width: 100%;
@@ -14,8 +13,14 @@
 
     .text {
         max-width: 90%;
+        isolation: isolate;
         z-index: 1000;
         line-height: 10vmax;
+        font-size: 5vmax;
+
+        @media screen and (min-width: 768px) {
+            font-size: 7vmax;
+        }
     }
 
     .point {
@@ -24,7 +29,8 @@
         }
     }
 
-    .circle-right, .circle {
+    .circle-right,
+    .circle {
         position: absolute;
         display: block;
         top: 25%;
@@ -32,6 +38,7 @@
         z-index: 10;
 
         svg {
+            isolation: isolate;
             z-index: 10;
         }
     }
@@ -45,6 +52,7 @@
         animation: circle-anim-expand-section 30s infinite linear;
 
         svg {
+            isolation: isolate;
             z-index: 10;
         }
     }
