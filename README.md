@@ -1,5 +1,5 @@
 # Landing Electra
-Website for [electra.fund](https://electra.fund).
+Website for [electra.space](https://electra.space).
 
 ## Scripts
 || Yarn | NPM |
