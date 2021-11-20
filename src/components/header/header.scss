@@ -95,7 +95,7 @@
 
         svg {
             animation-delay: 1s;
-            animation: circleMoveAround 20s cubic-bezier(0.90, 0.025, 0.90, 0.025) infinite;
+            animation: circleMoveAround 15s cubic-bezier(0.90, 0.025, 0.90, 0.025) infinite;
             animation-play-state: running;
             will-change: animation;
         }
@@ -128,14 +128,14 @@
 
 @keyframes circleMoveAround {
     0% {
-        transform: rotate(0deg) scale(0.5) skew(0deg, 0deg);
+        transform: rotate(0deg) scale(1) skew(0deg, 0deg);
     }
 
     60% {
-        transform: rotate(360deg) scale(1) skew(0deg, 5deg);
+        transform: rotate(360deg) scale(0.5) skew(0deg, 5deg);
     }
 
     100% {
-        transform: rotate(720deg) scale(0.5) skew(0deg, 0deg);
+        transform: rotate(720deg) scale(1) skew(0deg, 0deg);
     }
 }

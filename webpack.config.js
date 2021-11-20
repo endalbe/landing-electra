@@ -36,6 +36,15 @@ const config = {
 			chunks: ['main']
 		}),
 
+		new HtmlWebpackPlugin({
+			inject: true,
+			title: 'Get App | Electra',
+			filename: 'apps.html',
+			template: 'src/apps.html',
+			minify: true,
+			chunks: ['main']
+		}),
+
 		new BrowserSyncPlugin({
 			host: 'localhost',
 			port: 3000,

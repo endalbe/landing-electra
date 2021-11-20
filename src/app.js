@@ -18,6 +18,13 @@ lines.forEach((line) => line.classList.add('line_'));
 
 links.classList.remove('hidden');
 
+let w = window,
+	d = document,
+	e = d.documentElement,
+	g = d.getElementsByTagName('body')[0],
+	x = w.innerWidth || e.clientWidth || g.clientWidth;
+
 window.onresize = function () {
-	location.reload();
+	let t = w.innerWidth || e.clientWidth || g.clientWidth;
+	if (t !== x) location.reload();
 };

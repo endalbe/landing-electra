@@ -8,28 +8,19 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="theme-color" content="#000" />
 
-        <meta name="description" content="">
+        <meta name="description" content="Electra, get apps page">
 
         <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel='stylesheet' type='text/css'>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel='stylesheet'
             type='text/css'>
 
-
     </head>
 
     <body>
         <main id="app" class="hide mb-5" style="opacity: 0">
-            <%= require('html-loader!./Invest/components/navbar/navbar.html').default %>
+            <%= require('html-loader!./components/navbar/navbar.html').default %>
 
-            <%= require('html-loader!./Invest/components/header/header.html').default %>
-            <%= require('html-loader!./Invest/components/secondSection/index.html').default %>
-            <%= require('html-loader!./Invest/components/about/about.html').default %>
-            <%= require('html-loader!./Invest/components/delimiter/delimiter.html').default %>
-            <%= require('html-loader!./Invest/components/benefits/benefits.html').default %>
-            <%= require('html-loader!./Invest/components/table/table.html').default %>
-            <%= require('html-loader!./Invest/components/expand/expand.html').default %>
-            <%= require('html-loader!./Invest/components/franchise/franchise.html').default %>
-            <%= require('html-loader!./components/presentation/presentation.html').default %>
+            <%= require('html-loader!./components/getappSection/getapp.html').default %>
 
             <%= require('html-loader!./components/footer/footer.html').default %>
         </main>
@@ -50,6 +41,36 @@
                 <div class="download_line"></div>
             </div>
         </div>
+
+        <script>
+            function detectOS() {
+                const platform = navigator.platform.toLowerCase(),
+                    iosPlatforms = ['iphone', 'ipad', 'ipod', 'ipod touch'];
+
+                if (iosPlatforms.includes(platform)) return 'iOS';
+                if (/android/.test(navigator.userAgent.toLowerCase())) return 'Android';
+                return false;
+            }
+
+            if (detectOS()) {
+                switch (detectOS()) {
+                    case 'Android':
+                        window.location.href =
+                            'https://play.google.com/store/apps/details?id=space.electra';
+                        break;
+
+                    case 'iOS':
+                        window.location.href = 'https://apps.apple.com/ru/app/electra/id1548675057#';
+                        break;
+
+                    default:
+                        break;
+                }
+                window.location.href = 'https://apps.apple.com/ru/app/electra/id1548675057#';
+            }
+
+        </script>
+
 
     </body>
 
