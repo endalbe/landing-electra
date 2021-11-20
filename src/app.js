@@ -14,7 +14,7 @@ const waitingLoad = setInterval(() => {
 const lines = document.querySelectorAll('line_');
 const links = document.querySelector('.top_navbar');
 
-lines.forEach((line) => line.classList.add('line_'));
+lines.forEach((line) => line.classList.add('visible-line-style'));
 
 links.classList.remove('hidden');
 

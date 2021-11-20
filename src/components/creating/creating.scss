@@ -1,35 +1,35 @@
-@import '../../functions';
-@import '~bootstrap/scss/mixins/_breakpoints.scss';
+@import "../../functions";
+@import "~bootstrap/scss/mixins/breakpoints";
 @import "~bootstrap/scss/functions";
 @import "~bootstrap/scss/variables";
 
 .creating-section {
-    .first-text {
-        margin-bottom: rem(30);
+  .first-text {
+    margin-bottom: rem(30);
 
-        @include media-breakpoint-up(md) {
-            padding-left: 5vw;
-        }
+    @include media-breakpoint-up(md) {
+      padding-left: 5vw;
     }
+  }
 
-    .text-small {
-        font-size: 1.8vmax;
-        max-width: rem(400);
-        color: #cccbcb;
+  .text-small {
+    font-size: 1.8vmax;
+    max-width: rem(400);
+    color: #cccbcb;
 
-        @include media-breakpoint-up(md) {
-            font-size: 1vmax;
-        }
+    @include media-breakpoint-up(md) {
+      font-size: 1vmax;
     }
+  }
 
-    .text-big {
-        font-size: 3vmax;
-        text-transform: uppercase;
-        line-height: 5vmax;
-    }
+  .text-big {
+    font-size: 3vmax;
+    text-transform: uppercase;
+    line-height: 5vmax;
+  }
 
-    .img-fluid {
-        max-width: 100%;
-        vertical-align: middle;
-    }
+  .img-fluid {
+    max-width: 100%;
+    vertical-align: middle;
+  }
 }

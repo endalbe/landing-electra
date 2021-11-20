@@ -1,70 +1,67 @@
-@keyframes fadeIn {
-    from {
-        transform: scale(1.2);
-        opacity: 0;
-    }
+@keyframes fade-in-animation {
+  from {
+    transform: scale(1.2);
+    opacity: 0%;
+  }
 
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
+  to {
+    opacity: 100%;
+    transform: scale(1);
+  }
 }
 
-@keyframes fadeOut {
-    from {
-        transform: scale(0.5);
-        opacity: 0;
-    }
+@keyframes fade-out-animation {
+  from {
+    transform: scale(0.5);
+    opacity: 0%;
+  }
 
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
+  to {
+    transform: scale(1);
+    opacity: 100%;
+  }
 }
 
-@keyframes fadeInOut {
-    0% {
-        transform: scale(2);
-        opacity: 0;
-    }
+@keyframes fade-in-out {
+  0% {
+    transform: scale(2);
+    opacity: 0%;
+  }
 
-    70% {
-        transform: scale(0.7);
-    }
+  70% {
+    transform: scale(0.7);
+  }
 
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
+  100% {
+    transform: scale(1);
+    opacity: 100%;
+  }
 }
 
+@keyframes circle-move-around {
+  0% {
+    transform: rotate(0deg) scale(0.5) skew(0deg, 0deg);
+  }
 
-@keyframes circleMoveAround {
-    0% {
-        transform: rotate(0deg) scale(0.5) skew(0deg, 0deg);
-    }
+  60% {
+    transform: rotate(360deg) scale(1) skew(0deg, 5deg);
+  }
 
-    60% {
-        transform: rotate(360deg) scale(1) skew(0deg, 5deg);
-    }
-
-    100% {
-        transform: rotate(720deg) scale(0.5) skew(0deg, 0deg);
-    }
+  100% {
+    transform: rotate(720deg) scale(0.5) skew(0deg, 0deg);
+  }
 }
 
+@keyframes circle-move-around-light {
+  0% {
+    transform: rotate(0deg);
+  }
 
+  60% {
+    transform: rotate(360deg);
+  }
 
-@keyframes circleMoveAroundLight {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    60% {
-        transform: rotate(360deg);
-    }
-
-    100% {
-        transform: rotate(720deg);
-    }
+  100% {
+    transform: rotate(720deg);
+  }
 }

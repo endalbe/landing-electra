@@ -3,139 +3,139 @@
 @import "../../variables";
 
 .header-section {
-    overflow-x: hidden;
-    max-width: 100vw;
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 .header {
-    display: flex;
-    align-items: center;
-    margin-top: rem(110);
+  display: flex;
+  align-items: center;
+  margin-top: rem(110);
 
-    .text-with-app_links {
-        isolation: isolate;
-        z-index: 30;
+  .text-with-app_links {
+    isolation: isolate;
+    z-index: 30;
 
-        .present-text {
-            transform: 0.5s;
-            font-family: $mf;
-            font-size: 10vw;
-            line-height: 10vmax;
-            text-transform: uppercase;
-            cursor: default;
+    .present-text {
+      transform: 0.5s;
+      font-family: $mf;
+      font-size: 10vw;
+      line-height: 10vmax;
+      text-transform: uppercase;
+      cursor: default;
+      animation: fade-in-animation 1s cubic-bezier(0.95, 0.2, 0.795, 0.035);
 
-            animation: fadeIn 1s cubic-bezier(0.95, 0.2, 0.795, 0.035);
-
-            @media screen and (min-width: 1240px) {
-                font-size: rem(124);
-            }
-        }
-
-        .app-links {
-            @extend .d-flex, .flex-column, .flex-md-row, .ms-md-3;
-            flex-direction: row;
-
-            @include media-breakpoint-up(md) {
-                margin: rem(100) 0 0 0;
-            }
-
-            .app-link {
-                @extend .mb-3, .me-md-2;
-                display: flex;
-                align-items: center;
-                text-decoration: none;
-                color: white;
-                transition: 0.2s;
-                border: rem(2) solid transparentize(white, 0.5);
-                border-radius: rem(15);
-                padding: rem(10) rem(20);
-
-                animation: fadeOut 1s cubic-bezier(0.95, 0.2, 0.795, 0.035);
-
-                .app-link-text {
-                    font-family: $mf;
-                    margin-left: rem(15);
-
-                    .sub-text {
-                        font-size: rem(12);
-                        color: rgba(255, 255, 255, 0.5);
-                    }
-
-                    .text {
-                        margin-top: rem(5);
-                        font-weight: bold;
-                    }
-                }
-
-                svg {
-                    transition: 0.2s;
-                }
-
-                &:hover {
-                    border-color: #C4F07F;
-
-                    svg {
-                        transform: scale(.90);
-
-                        path {
-                            fill: #C4F07F;
-                        }
-                    }
-                }
-            }
-        }
+      @media screen and (min-width: 1240px) {
+        font-size: rem(124);
+      }
     }
 
-    .circle-appear {
-        z-index: 10;
-        position: relative;
-        width: 1000px;
-        height: 0px;
-        transform: translateX(-70%) translateY(rem(-500));
+    .app-links {
+      @extend .d-flex, .flex-column, .flex-md-row, .ms-md-3;
+
+      flex-direction: row;
+
+      @include media-breakpoint-up(md) {
+        margin: rem(100) 0 0 0;
+      }
+
+      .app-link {
+        @extend .mb-3, .me-md-2;
+
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: white;
+        transition: 0.2s;
+        border: rem(2) solid transparentize(white, 0.5);
+        border-radius: rem(15);
+        padding: rem(10) rem(20);
+        animation: fade-out-animation 1s cubic-bezier(0.95, 0.2, 0.795, 0.035);
+
+        .app-link-text {
+          font-family: $mf;
+          margin-left: rem(15);
+
+          .sub-text {
+            font-size: rem(12);
+            color: rgb(255 255 255 / 50%);
+          }
+
+          .text {
+            margin-top: rem(5);
+            font-weight: bold;
+          }
+        }
 
         svg {
-            animation-delay: 1s;
-            animation: circleMoveAround 15s cubic-bezier(0.90, 0.025, 0.90, 0.025) infinite;
-            animation-play-state: running;
-            will-change: animation;
+          transition: 0.2s;
         }
+
+        &:hover {
+          border-color: #c4f07f;
+
+          svg {
+            transform: scale(0.9);
+
+            path {
+              fill: #c4f07f;
+            }
+          }
+        }
+      }
     }
+  }
+
+  .circle-appear {
+    z-index: 10;
+    position: relative;
+    width: 1000px;
+    height: 0;
+    transform: translateX(-70%) translateY(rem(-500));
+
+    svg {
+      animation-delay: 1s;
+      animation: circle-move-around 15s cubic-bezier(0.9, 0.025, 0.9, 0.025) infinite;
+      animation-play-state: running;
+      will-change: animation;
+    }
+  }
 }
 
 .slide-msg {
-    margin: rem(50) 0 rem(130) 0;
+  margin: rem(50) 0 rem(130) 0;
 
-    .fa-angle-double-down {
-        animation: arrowAnimation 2.5s ease-in-out 20;
-        animation-delay: 1s;
-        transform: scaleX(2);
-    }
+  .fa-angle-double-down {
+    animation: arrowAnimation 2.5s ease-in-out 20;
+    animation-delay: 1s;
+    transform: scaleX(2);
+  }
 }
 
 @keyframes arrowAnimation {
-    0% {
-        transform: translateY(rem(-5)) scaleX(3);
-    }
+  0% {
+    transform: translateY(rem(-5)) scaleX(3);
+  }
 
-    50% {
-        transform: translateY(rem(5)) scaleX(1.5);
-    }
+  50% {
+    transform: translateY(rem(5)) scaleX(1.5);
+  }
 
-    100% {
-        transform: translateY(rem(-5)) scaleX(3);
-    }
+  100% {
+    transform: translateY(rem(-5)) scaleX(3);
+  }
 }
 
-@keyframes circleMoveAround {
-    0% {
-        transform: rotate(0deg) scale(1) skew(0deg, 0deg);
-    }
+@keyframes circle-move-around {
+  0% {
+    transform: rotate(0deg) scale(1) skew(0deg, 0deg);
+  }
 
-    60% {
-        transform: rotate(360deg) scale(0.5) skew(0deg, 5deg);
-    }
+  60% {
+    transform: rotate(360deg) scale(0.5) skew(0deg, 5deg);
+  }
 
-    100% {
-        transform: rotate(720deg) scale(1) skew(0deg, 0deg);
-    }
+  100% {
+    transform: rotate(720deg) scale(1) skew(0deg, 0deg);
+  }
 }

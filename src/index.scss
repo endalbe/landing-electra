@@ -1,56 +1,54 @@
 @import "functions";
-@import "~reseter.css/src/scss/reseter.scss";
-@import '~bootstrap/scss/bootstrap-grid.scss';
+@import "~reseter.css/src/scss/reseter";
+@import "~bootstrap/scss/bootstrap-grid";
 @import "fonts";
 @import "variables";
 @import "animations";
-@import "~aos/src/sass/aos.scss";
-
-@import './components/header/header';
+@import "~aos/src/sass/aos";
+@import "./components/header/header";
 
 html {
-    font-family: $mf;
-    overflow-x: hidden;
-    max-width: 100vw;
+  font-family: $mf;
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 body {
-    overflow-x: hidden;
-    max-width: 100vw;
-    background: $dark;
-    color: white;
-    width: 100%;
-    min-height: 100vh;
-    height: 100%;
-    overscroll-behavior: none;
+  overflow-x: hidden;
+  max-width: 100vw;
+  background: $dark;
+  color: white;
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+  overscroll-behavior: none;
 }
 
 #app {
+  transition: 0.15s;
+  display: flex;
+  flex-direction: column;
+
+  &.hide {
     transition: 0.15s;
-    display: flex;
-    flex-direction: column;
-
-    &.hide {
-        transition: 0.15s;
-        display: none;
-        visibility: hidden;
-        opacity: 0;
-        max-width: 100vw;
-        overflow-x: hidden;
-    }
+    display: none;
+    visibility: hidden;
+    opacity: 0%;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
 }
-
 
 .container,
 .container-md {
-    display: block;
-    margin: 0 auto;
-    max-width: rem(1200);
-    padding: 0 rem(20);
-    width: 100%;
-    background: transparent;
+  display: block;
+  margin: 0 auto;
+  max-width: rem(1200);
+  padding: 0 rem(20);
+  width: 100%;
+  background: transparent;
 }
 
 .container-md {
-    max-width: rem(1250);
+  max-width: rem(1250);
 }

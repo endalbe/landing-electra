@@ -2,16 +2,21 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const isProduction = process.env.NODE_ENV == 'production';
-const stylesHandler = 'style-loader';
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
 
 const config = {
 	entry: './src/app.js',
 	output: {
 		path: path.resolve(__dirname, 'dist')
 	},
+	devtool: 'source-map',
 
 	devServer: {
 		open: true,
@@ -19,11 +24,33 @@ const config = {
 	},
 
 	plugins: [
+		new MiniCssExtractPlugin(),
+
+		// new ImageMinimizerPlugin({
+		// 	minimizerOptions: {
+		// 		plugins: [
+		// 			['jpegtran', { progressive: true }],
+		// 			['optipng', { optimizationLevel: 5 }]
+		// 		]
+		// 	}
+		// }),
+
 		new HtmlWebpackPlugin({
 			title: 'Electra',
 			filename: 'index.html',
 			template: 'src/index.html',
 			minify: true,
+			minimizerOptions: {
+				caseSensitive: true,
+				collapseWhitespace: true,
+				conservativeCollapse: true,
+				keepClosingSlash: true,
+				minifyCSS: true,
+				minifyJS: true,
+				removeComments: true,
+				removeScriptTypeAttributes: true,
+				removeStyleLinkTypeAttributes: true
+			},
 			chunks: ['main']
 		}),
 
@@ -33,6 +60,17 @@ const config = {
 			filename: 'invest.html',
 			template: 'src/invest.html',
 			minify: true,
+			minimizerOptions: {
+				caseSensitive: true,
+				collapseWhitespace: true,
+				conservativeCollapse: true,
+				keepClosingSlash: true,
+				minifyCSS: true,
+				minifyJS: true,
+				removeComments: true,
+				removeScriptTypeAttributes: true,
+				removeStyleLinkTypeAttributes: true
+			},
 			chunks: ['main']
 		}),
 
@@ -42,6 +80,17 @@ const config = {
 			filename: 'apps.html',
 			template: 'src/apps.html',
 			minify: true,
+			minimizerOptions: {
+				caseSensitive: true,
+				collapseWhitespace: true,
+				conservativeCollapse: true,
+				keepClosingSlash: true,
+				minifyCSS: true,
+				minifyJS: true,
+				removeComments: true,
+				removeScriptTypeAttributes: true,
+				removeStyleLinkTypeAttributes: true
+			},
 			chunks: ['main']
 		}),
 
@@ -57,6 +106,7 @@ const config = {
 			inject: true
 		}),
 
+		new CompressionPlugin(),
 		new CopyPlugin({
 			patterns: [{ from: 'src/form', to: 'form' }]
 		})
@@ -64,15 +114,24 @@ const config = {
 
 	module: {
 		rules: [
-			{ test: /\.(js|jsx)$/i, loader: 'babel-loader' },
 			{
-				test: /\.s[ac]ss$/i,
+				test: /\.js$/,
+				enforce: 'pre',
+				use: ['source-map-loader']
+			},
+			{
+				test: /.s?css$/,
 				use: [
-					stylesHandler,
+					MiniCssExtractPlugin.loader,
 					'css-loader',
 					'postcss-loader',
 					'sass-loader'
 				]
+			},
+			{ test: /\.(js|jsx)$/i, loader: 'babel-loader' },
+			{
+				test: /\.(jpe?g|png|gif|svg)$/i,
+				type: 'asset'
 			},
 			{
 				test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
@@ -82,20 +141,30 @@ const config = {
 	},
 
 	optimization: {
+		mergeDuplicateChunks: false,
+		minimize: true,
+		moduleIds: 'deterministic',
+		providedExports: true,
+		removeAvailableModules: true,
+		removeEmptyChunks: true,
+		concatenateModules: true,
 		minimizer: [
+			new TerserPlugin({
+				parallel: true,
+				terserOptions: {
+					compress: true,
+					mangle: true,
+					module: false
+				}
+			}),
+			new CssMinimizerPlugin(),
+
 			new UglifyJsPlugin({
 				extractComments: true,
 				sourceMap: true,
 				uglifyOptions: {
-					warnings: false,
-					parse: {},
 					compress: true,
-					mangle: true,
-					output: null,
-					toplevel: false,
-					nameCache: null,
-					ie8: false,
-					keep_fnames: false
+					mangle: true
 				},
 				minify(file) {
 					const extractedComments = [];

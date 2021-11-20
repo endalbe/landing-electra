@@ -11,13 +11,13 @@
 
 <body style="background: black;">
     <?php if ($_SESSION['success'] == true) : ?>
-        <h1>
-            Success! <a href="/">Go to main page...</a>
-        </h1>
+        <h3 class="color: green;">
+            Success! <a class="color: bleu;" href="/">Go to main page...</a>
+        </h3>
     <?php else : ?>
-        <h1 class="color: red;">
+        <h3 class="color: red;">
             Error! <a href="/">Go to main page...</a>
-        </h1>
+        </h3>
     <?php endif; ?>
 </body>
 

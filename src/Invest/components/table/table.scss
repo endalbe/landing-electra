@@ -1,154 +1,154 @@
-@import '../../../variables';
-@import '../../../functions';
-@import '~bootstrap/scss/mixins';
+@import "../../../variables";
+@import "../../../functions";
+@import "~bootstrap/scss/mixins";
 @import "~bootstrap/scss/functions";
-@import '~bootstrap/scss/variables';
-@import '~bootstrap/scss/modal';
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/modal";
 
 .table-section {
-    margin-top: rem(160);
-    font-family: $mf;
+  margin-top: rem(160);
+  font-family: $mf;
 
-    .table {
-        border: {
-            top: rem(1) solid white;
-            left: rem(1) solid white;
-            right: rem(1) solid white;
-        }
-
-        font-size: rem(18);
-
-        .head-block {
-            text-align: center;
-            border-bottom: rem(1) solid white;
-            padding: rem(20) 0;
-        }
-
-        .list {
-            padding: rem(20);
-
-            .item {
-                display: flex;
-                align-items: center;
-                margin: rem(25) 0;
-                font-family: $rf;
-
-                .text {
-                    font-size: rem(18);
-                }
-
-                .icon {
-                    margin-right: rem(15);
-                }
-            }
-        }
+  .table {
+    border: {
+      top: rem(1) solid white;
+      left: rem(1) solid white;
+      right: rem(1) solid white;
     }
 
-    .btn-link {
-        background: #C4F07F;
+    font-size: rem(18);
+
+    .head-block {
+      text-align: center;
+      border-bottom: rem(1) solid white;
+      padding: rem(20) 0;
+    }
+
+    .list {
+      padding: rem(20);
+
+      .item {
+        display: flex;
+        align-items: center;
+        margin: rem(25) 0;
+        font-family: $rf;
+
+        .text {
+          font-size: rem(18);
+        }
+
+        .icon {
+          margin-right: rem(15);
+        }
+      }
+    }
+  }
+
+  .btn-link {
+    background: #c4f07f;
+    font-size: rem(18);
+    text-align: center;
+    width: 100%;
+    display: block;
+    padding: rem(15) 0;
+    color: black;
+    text-decoration: none;
+    transition: 0.25s;
+    cursor: pointer;
+    border: white solid rem(1);
+
+    &:hover,
+    &:focus {
+      background: darken(#c4f07f, 15);
+      outline: none;
+      box-sizing: none;
+      border: #c4f07f solid rem(1);
+    }
+
+    &:active {
+      background: darken(#c4f07f, 20);
+      outline: none;
+      box-sizing: none;
+      border: #c4f07f solid rem(1);
+    }
+  }
+}
+
+.modal {
+  background: black;
+
+  .modal-content {
+    border-radius: 0;
+    background: #242424;
+
+    .form-control {
+      .btn-send {
+        background: #c4f07f;
         font-size: rem(18);
         text-align: center;
-        width: 100%;
-        display: block;
-        padding: rem(15) 0;
+        padding: rem(10) rem(30);
         color: black;
         text-decoration: none;
         transition: 0.25s;
         cursor: pointer;
-        border: white solid rem(1);
+        border: transparent solid rem(1);
 
         &:hover,
         &:focus {
-            background: darken(#c4f07f, 15);
-            outline: none;
-            box-sizing: none;
-            border: #C4F07F solid rem(1);
+          background: darken(#c4f07f, 15);
+          outline: none;
+          box-sizing: none;
+          border: #c4f07f solid rem(1);
         }
 
         &:active {
-            background: darken(#c4f07f, 20);
-            outline: none;
-            box-sizing: none;
-            border: #C4F07F solid rem(1);
+          background: darken(#c4f07f, 20);
+          outline: none;
+          box-sizing: none;
+          border: #c4f07f solid rem(1);
         }
-    }
-}
+      }
 
-.modal {
-    background: black;
+      input {
+        transition: 0.15s;
+        font-size: rem(18);
+        padding: rem(10) rem(30);
+        background: black;
+        color: #aaa;
 
-    .modal-content {
-        border-radius: 0;
-        background: #242424;
-
-        .form-control {
-            .btn-send {
-                background: #C4F07F;
-                font-size: rem(18);
-                text-align: center;
-                padding: rem(10) rem(30);
-                color: black;
-                text-decoration: none;
-                transition: 0.25s;
-                cursor: pointer;
-                border: transparent solid rem(1);
-
-                &:hover,
-                &:focus {
-                    background: darken(#c4f07f, 15);
-                    outline: none;
-                    box-sizing: none;
-                    border: #C4F07F solid rem(1);
-                }
-
-                &:active {
-                    background: darken(#c4f07f, 20);
-                    outline: none;
-                    box-sizing: none;
-                    border: #C4F07F solid rem(1);
-                }
-            }
-
-            input {
-                transition: 0.15s;
-                font-size: rem(18);
-                padding: rem(10) rem(30);
-                background: black;
-                color: #aaaaaa;
-
-                border: {
-                    top: transparent solid rem(1);
-                    left: transparent solid rem(1);
-                    right: transparent solid rem(1);
-                    bottom: #C4F07F solid rem(1);
-                }
-
-                &:focus,
-                &:active {
-                    outline: none;
-                    box-sizing: none;
-                    border: #C4F07F solid rem(1);
-                    background: #424242;
-                    color: white;
-                }
-            }
+        border: {
+          top: transparent solid rem(1);
+          left: transparent solid rem(1);
+          right: transparent solid rem(1);
+          bottom: #c4f07f solid rem(1);
         }
+
+        &:focus,
+        &:active {
+          outline: none;
+          box-sizing: none;
+          border: #c4f07f solid rem(1);
+          background: #424242;
+          color: white;
+        }
+      }
     }
+  }
 }
 
 .btn-close {
-    background: #363636;
-    color: white;
-    padding: rem(30);
-    margin-top: rem(20);
-    font-size: rem(18);
-    cursor: pointer;
-    border-color: transparent;
-    outline: none;
-    box-shadow: none;
-    transition: 0.15s;
-    
-    &:hover {
-        background: #421a1a;
-    }
+  background: #363636;
+  color: white;
+  padding: rem(30);
+  margin-top: rem(20);
+  font-size: rem(18);
+  cursor: pointer;
+  border-color: transparent;
+  outline: none;
+  box-shadow: none;
+  transition: 0.15s;
+
+  &:hover {
+    background: #421a1a;
+  }
 }

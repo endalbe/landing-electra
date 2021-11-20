@@ -1,63 +1,66 @@
-@import '../../../variables';
-@import '../../../functions';
-@import '~bootstrap/scss/mixins/_breakpoints.scss';
+@import "../../../variables";
+@import "../../../functions";
+@import "~bootstrap/scss/mixins/breakpoints";
 @import "~bootstrap/scss/functions";
 @import "~bootstrap/scss/variables";
 
 .benefits-section {
-    min-height: 110vh;
+  min-height: 110vh;
 
-    @media screen and (max-width: 767.99px) {
-        padding-top: rem(30);
-        background: linear-gradient(rgba(0, 0, 0, 0.95),
-                rgba(0, 0, 0, 0.35),
-                rgba(0, 0, 0, 1)),
-            url(../../../assets/images/discussion.jpg) no-repeat;
-        background-size: cover;
-    }
+  @media screen and (max-width: 767.99px) {
+    padding-top: rem(30);
+    background:
+      linear-gradient(
+        rgb(0 0 0 / 95%),
+        rgb(0 0 0 / 35%),
+        rgb(0 0 0 / 100%)
+      ),
+      url('../../../assets/images/discussion.jpg') no-repeat;
+    background-size: cover;
+  }
+
+  @media screen and (min-width: 768px) {
+    background: url("../../../assets/images/discussion.jpg") no-repeat;
+    background-position: 100% 20vh;
+    background-size: auto 80%;
+  }
+
+  @include media-breakpoint-up(xxl) {
+    background-size: auto 70%;
+  }
+
+  .headline {
+    font-size: 4vmax;
+    max-width: 70%;
+    text-transform: uppercase;
 
     @media screen and (min-width: 768px) {
-        background: url('../../../assets/images/discussion.jpg') no-repeat;
-        background-position: 100% 20vh;
-        background-size: auto 80%;
+      font-size: 6vmax;
     }
 
     @include media-breakpoint-up(xxl) {
-        background-size: auto 70%;
+      font-size: rem(84);
     }
 
-    .headline {
-        font-size: 4vmax;
-        max-width: 70%;
-        text-transform: uppercase;
+    .accent-text {
+      color: #c4f07f;
+    }
+  }
 
-        @media screen and (min-width: 768px) {
-            font-size: 6vmax;
-        }
-
-        @include media-breakpoint-up(xxl) {
-            font-size: rem(84);
-        }
-
-        .accent-text {
-            color: #C4F07F;
-        }
+  .list {
+    @media screen and (min-width: 768px) {
+      max-width: 40%;
     }
 
-    .list {
-        @media screen and (min-width: 768px) {
-            max-width: 40%;
-        }
+    .item {
+      display: flex;
+      align-items: center;
+      margin-top: rem(70);
+      line-height: rem(30);
 
-        .item {
-            display: flex;
-            align-items: center;
-            margin-top: rem(70);
-            line-height: rem(30);
-
-            svg {
-                margin-right: rem(20);
-            }
-        }
+      svg {
+        margin-right: rem(20);
+      }
     }
+  }
 }

@@ -18,7 +18,7 @@ const preloader = {
 	},
 
 	loadingState(preloaderHtmlT) {
-		const progressBar = document.querySelector('.download_line');
+		const progressBar = document.querySelector('.download-line');
 		const images = document.images;
 		let imagesLoaded = 0;
 
@@ -69,7 +69,7 @@ const preloader = {
 							preloader.content.style = `opacity: 1`;
 							preloader.content.classList.remove('hide');
 
-							preloaderHtml.classList.add('isLoaded');
+							preloaderHtml.classList.add('is-loaded');
 						}, 1000);
 					},
 					function () {
@@ -78,7 +78,7 @@ const preloader = {
 				)
 				.then(function () {
 					setTimeout(() => {
-						preloaderHtml.classList.remove('isLoaded');
+						preloaderHtml.classList.remove('is-loaded');
 						preloaderHtml.innerHTML = '';
 						preloaderHtml.remove();
 						preloaderHtml.hidden = true;
