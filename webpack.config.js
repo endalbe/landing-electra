@@ -26,14 +26,14 @@ const config = {
 	plugins: [
 		new MiniCssExtractPlugin(),
 
-		// new ImageMinimizerPlugin({
-		// 	minimizerOptions: {
-		// 		plugins: [
-		// 			['jpegtran', { progressive: true }],
-		// 			['optipng', { optimizationLevel: 5 }]
-		// 		]
-		// 	}
-		// }),
+		new ImageMinimizerPlugin({
+			minimizerOptions: {
+				plugins: [
+					['jpegtran', { progressive: true }],
+					['optipng', { optimizationLevel: 5 }]
+				]
+			}
+		}),
 
 		new HtmlWebpackPlugin({
 			title: 'Electra',
