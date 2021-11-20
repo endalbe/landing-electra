@@ -8,6 +8,7 @@
     "browser-sync": "^2.27.7",
     "browser-sync-webpack-plugin": "^2.3.0",
     "browsersync": "^0.0.1-security",
+    "copy-webpack-plugin": "^10.0.0",
     "css-loader": "^6.4.0",
     "eslint": "^8.2.0",
     "eslint-config-google": "^0.14.0",

@@ -103,9 +103,29 @@
                     <div></div>
                 </div>
                 <div class="d-block">
-                    <a class="btn-link" href="#">Invest</a>
+                    <button class="btn-link" data-bs-toggle="modal" data-bs-target="#form-appea">Invest</button>
                 </div>
             </div>
         </div>
+    </div>
+</div>
+
+<div class="modal fade" id="form-appea" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="form-appeaLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+        <form action="form/sendHandler.php" method="post" id="Send-mail" class="modal-content">
+            <div class="modal-body">
+                <div class="form-control">
+                    <input required type="text" name="name" id="name" placeholder="First and last name" />
+                </div>
+
+                <div class="form-control">
+                    <input required type="email" style="margin-top: 30px" name="email" id="email" placeholder="Email" />
+                    <button type="submit" class="btn-send">Send</button>
+                </div>
+
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="modal">Close</button>
+        </form>
     </div>
 </div>
