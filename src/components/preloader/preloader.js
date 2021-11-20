@@ -38,8 +38,8 @@ const preloader = {
 			showMsg(`Downloading...`);
 			imagesLoaded++;
 
-			if (imagesLoaded > 3) {
-				setTimeout(() => preloader.hideState(preloaderHtmlT), 1000);
+			if (imagesLoaded > 5) {
+				setTimeout(() => preloader.hideState(preloaderHtmlT), 5000);
 			}
 
 			const progress = ((100 / images.length) * imagesLoaded) << 0;
