@@ -1,6 +1,6 @@
-@use "sass:math";
-@import "../../functions";
-@import "../../variables";
+@use 'sass:math';
+@import '../../functions';
+@import '../../variables';
 
 .header-section {
   overflow-x: hidden;
@@ -93,11 +93,17 @@
     height: 0;
     transform: translateX(-70%) translateY(rem(-500));
 
-    svg {
-      animation-delay: 1s;
-      animation: circle-move-around 15s cubic-bezier(0.9, 0.025, 0.9, 0.025) infinite;
+    svg > path {
+      transform: rotate(0deg) scale(1);
+      transform-origin: center center;
+      
+      @for $i from 1 through 30 {
+        &:nth-child(#{$i}) {
+          animation: circle-move-around 7s (10ms * (30 - $i)) cubic-bezier(0.85, 0, 0.15, 1) infinite;
+        }
+      }
       animation-play-state: running;
-      will-change: animation;
+      will-change: auto;
     }
   }
 }
@@ -128,14 +134,13 @@
 
 @keyframes circle-move-around {
   0% {
-    transform: rotate(0deg) scale(1) skew(0deg, 0deg);
+    transform: rotate(0deg) scale(1);
   }
-
-  60% {
-    transform: rotate(360deg) scale(0.5) skew(0deg, 5deg);
+  49% {
+    transform: rotate(360deg) scale(0.5);
   }
-
+  98%,
   100% {
-    transform: rotate(720deg) scale(1) skew(0deg, 0deg);
+    transform: rotate(360deg * 2) scale(1);
   }
 }
