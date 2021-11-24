@@ -10,6 +10,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
+const FileLoader = require('file-loader');
 
 const config = {
 	entry: './src/app.js',
@@ -54,25 +55,25 @@ const config = {
 			chunks: ['main']
 		}),
 
-		new HtmlWebpackPlugin({
-			inject: true,
-			title: 'Invest | Electra',
-			filename: 'invest.html',
-			template: 'src/invest.html',
-			minify: true,
-			minimizerOptions: {
-				caseSensitive: true,
-				collapseWhitespace: true,
-				conservativeCollapse: true,
-				keepClosingSlash: true,
-				minifyCSS: true,
-				minifyJS: true,
-				removeComments: true,
-				removeScriptTypeAttributes: true,
-				removeStyleLinkTypeAttributes: true
-			},
-			chunks: ['main']
-		}),
+		// new HtmlWebpackPlugin({
+		// 	inject: true,
+		// 	title: 'Invest | Electra',
+		// 	filename: 'invest.html',
+		// 	template: 'src/invest.html',
+		// 	minify: true,
+		// 	minimizerOptions: {
+		// 		caseSensitive: true,
+		// 		collapseWhitespace: true,
+		// 		conservativeCollapse: true,
+		// 		keepClosingSlash: true,
+		// 		minifyCSS: true,
+		// 		minifyJS: true,
+		// 		removeComments: true,
+		// 		removeScriptTypeAttributes: true,
+		// 		removeStyleLinkTypeAttributes: true
+		// 	},
+		// 	chunks: ['main']
+		// }),
 
 		new HtmlWebpackPlugin({
 			inject: true,
@@ -118,6 +119,17 @@ const config = {
 				test: /\.js$/,
 				enforce: 'pre',
 				use: ['source-map-loader']
+			},
+			{
+				test: /\.(pdf)$/,
+				use: [
+					{
+						loader: 'file-loader',
+						options: {
+							name: '[name].[ext]'
+						}
+					}
+				]
 			},
 			{
 				test: /.s?css$/,

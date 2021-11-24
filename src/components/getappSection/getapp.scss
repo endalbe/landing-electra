@@ -5,6 +5,9 @@
   margin-top: rem(120);
   max-width: 100vw;
   overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
 
   .text {
     line-height: rem(40);

@@ -3,6 +3,9 @@
 
 .transport-section {
   margin-top: rem(120);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
 
   .images {
     img {
