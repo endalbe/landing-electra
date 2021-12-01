@@ -14,9 +14,11 @@ const waitingLoad = setInterval(() => {
 const lines = document.querySelectorAll('line_');
 const links = document.querySelector('.top_navbar');
 
-lines.forEach((line) => line.classList.add('visible-line-style'));
+lines.forEach((line) => {
+	line.classList.add('visible-line-style');
+});
 
-links.classList.remove('hidden');
+links ? links.classList.remove('hidden') : null;
 
 let w = window,
 	d = document,
@@ -24,7 +26,7 @@ let w = window,
 	g = d.getElementsByTagName('body')[0],
 	x = w.innerWidth || e.clientWidth || g.clientWidth;
 
-window.onresize = function () {
+window.addEventListener('resize', () => {
 	let t = w.innerWidth || e.clientWidth || g.clientWidth;
 	if (t !== x) location.reload();
-};
+});

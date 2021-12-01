@@ -17,8 +17,8 @@ const config = {
 	output: {
 		path: path.resolve(__dirname, 'dist')
 	},
-	devtool: 'source-map',
 
+	// devtool: 'source-map',
 	devServer: {
 		open: true,
 		host: 'localhost'
